@@ -174,4 +174,9 @@ This is a question, not a recommendation.
 - [x] Reviewed every judgment reason and confirmed that the reasons reflect my view.
 - [x] Completed the real partner question, received attack, two-sentence answer, and my attack on the partner.
 - [x] Ran the base file and the deliberate refusal test; the broken run refused with an FY2028E $100.0 million gap.
-- [ ] Commit both files and paste their GitHub links.
+- [x] Committed both files and added their GitHub links.
+
+## Checkout — GitHub links
+
+- [Lab 10 written report](https://github.com/abdullayevkarim2207-afk/Lab-10-/blob/main/lab10_ford.md)
+- [Lab 10 Python model](https://github.com/abdullayevkarim2207-afk/Lab-10-/blob/main/lab10_ford_proforma.py)
