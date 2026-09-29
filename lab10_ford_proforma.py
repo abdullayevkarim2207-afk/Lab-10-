@@ -57,14 +57,26 @@ OPENING = {
 }
 
 
-def build_projection() -> list[dict[str, float]]:
-    """Build linked income statement, balance sheet, and cash-flow rows."""
+def build_projection(
+    *,
+    revenue_growth: dict[int, float] | None = None,
+    gross_margin: dict[int, float] | None = None,
+) -> list[dict[str, float]]:
+    """Build linked statements, optionally using independent sensitivity inputs."""
+    revenue_growth = (
+        REVENUE_GROWTH.copy() if revenue_growth is None else dict(revenue_growth)
+    )
+    gross_margin = GROSS_MARGIN.copy() if gross_margin is None else dict(gross_margin)
+    expected_years = set(YEARS)
+    if set(revenue_growth) != expected_years or set(gross_margin) != expected_years:
+        raise ValueError("Revenue-growth and gross-margin paths must cover 2026-2030")
+
     forecasts = []
     opening = OPENING.copy()
 
     for year in YEARS:
-        revenue = opening["revenue"] * (1.0 + REVENUE_GROWTH[year])
-        gross_profit = revenue * GROSS_MARGIN[year]
+        revenue = opening["revenue"] * (1.0 + revenue_growth[year])
+        gross_profit = revenue * gross_margin[year]
         cost_of_sales = revenue - gross_profit
         sga = gross_profit * SGA_TO_GROSS_PROFIT
         ford_credit_expense = revenue * FORD_CREDIT_EXPENSE_TO_REVENUE
