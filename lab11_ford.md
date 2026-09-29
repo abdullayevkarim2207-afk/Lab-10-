@@ -177,6 +177,13 @@ margin assumptions.
    changed, but it does not show how likely each scenario is to happen. The
    lower and higher cases are test cases, not probability-weighted forecasts.
 
+## Reflection
+
+What surprised me most was how much gross margin changed the value per share.
+I knew it would have an effect, but I did not expect it to move from $10.41 to
+$12.34. That showed me that Ford's valuation is more sensitive to margin
+changes than I originally thought.
+
 ## AI-use disclosure
 
 After the locked prediction and partner pre-run check, OpenAI Codex helped add
